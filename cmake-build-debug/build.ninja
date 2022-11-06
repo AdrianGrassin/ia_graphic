@@ -49,7 +49,7 @@ cmake_ninja_workdir = D$:\Clase\3\IA\P2-Graphics\cmake-build-debug\
 
 build cmake_object_order_depends_target_P2___Graphics: phony || CMakeFiles\P2___Graphics.dir
 
-build CMakeFiles\P2___Graphics.dir\maini.cpp.obj: CXX_COMPILER__P2___Graphics_Debug D$:\Clase\3\IA\P2-Graphics\maini.cpp || cmake_object_order_depends_target_P2___Graphics
+build CMakeFiles\P2___Graphics.dir\main.cpp.obj: CXX_COMPILER__P2___Graphics_Debug D$:\Clase\3\IA\P2-Graphics\main.cpp || cmake_object_order_depends_target_P2___Graphics
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   INCLUDES = -ID:\Clase\3\IA\P2-Graphics\SDL\SDL2-2.24.2\include -ID:\Clase\3\IA\P2-Graphics\SDL\SDL2_image-2.6.2\include
   OBJECT_DIR = CMakeFiles\P2___Graphics.dir
@@ -73,7 +73,7 @@ build CMakeFiles\P2___Graphics.dir\src\sdl_functions_own.cc.obj: CXX_COMPILER__P
 #############################################
 # Link the executable P2___Graphics.exe
 
-build P2___Graphics.exe: CXX_EXECUTABLE_LINKER__P2___Graphics_Debug CMakeFiles\P2___Graphics.dir\maini.cpp.obj CMakeFiles\P2___Graphics.dir\src\sdl_functions_own.cc.obj
+build P2___Graphics.exe: CXX_EXECUTABLE_LINKER__P2___Graphics_Debug CMakeFiles\P2___Graphics.dir\main.cpp.obj CMakeFiles\P2___Graphics.dir\src\sdl_functions_own.cc.obj
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = SDL2main.lib  SDL2.lib  SDL2_image.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

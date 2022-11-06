@@ -15,7 +15,7 @@ set(SDL2_IMAGE_INCLUDE_DIR D:/Clase/3/IA/P2-Graphics/SDL/SDL2_image-2.6.2/includ
 include_directories(${SDL2_IMAGE_INCLUDE_DIR})
 link_directories(${SDL2_IMAGE_LIB_DIR})
 
-add_executable(P2___Graphics maini.cpp src/sdl_functions_own.cc)
+add_executable(P2___Graphics main.cpp src/sdl_functions_own.cc)
 
 target_link_libraries(${PROJECT_NAME} SDL2main SDL2)
 target_link_libraries(${PROJECT_NAME} SDL2_image)

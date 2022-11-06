@@ -4,7 +4,6 @@
 
 #include "../include/sdl_functions_own.h"
 
-
 /******************************* Funciones *******************************/
 
 bool init() {
@@ -12,92 +11,114 @@ bool init() {
   bool success = true;
 
   //Initialize SDL
-  if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
-  {
-    printf( "SDL could not initialize! SDL Error: %s\n", SDL_GetError() );
+  if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+    printf("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
     success = false;
-  }
-  else
-  {
+  } else {
     //Create window
-    globals::window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, globals::SCREEN_WIDTH, globals::SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-    if( globals::window == NULL )
-    {
+    globals::window = SDL_CreateWindow("SDL Tutorial",
+                                       SDL_WINDOWPOS_UNDEFINED,
+                                       SDL_WINDOWPOS_UNDEFINED,
+                                       globals::SCREEN_WIDTH,
+                                       globals::SCREEN_HEIGHT,
+                                       SDL_WINDOW_SHOWN);
+    if (globals::window == NULL) {
       std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
       success = false;
-    }
-    else
-    {
-      //Initialize PNG loading
-      int imgFlags = IMG_INIT_PNG;
-      if( !( IMG_Init( imgFlags ) & imgFlags ) )
-      {
-        std::cout << "SDL_image could not initialize! SDL_image Error: " << IMG_GetError() << std::endl;
+    } else {
+      // hay que crear el renderer
+      globals::renderer = SDL_CreateRenderer(globals::window, -1, SDL_RENDERER_ACCELERATED);
+      if (globals::renderer == NULL) {
+        std::cout << "Renderer could not be created! SDL Error: " << SDL_GetError() << std::endl;
         success = false;
-      }
-      else
-      {
-        //Get window surface
-        globals::screenSurface = SDL_GetWindowSurface( globals::window );
+      } else {
+        SDL_SetRenderDrawColor(globals::renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+
+        //Initialize PNG loading
+        int imgFlags = IMG_INIT_PNG;
+        if (!(IMG_Init(imgFlags) & imgFlags)) {
+          std::cout << "SDL_image could not initialize! SDL_image Error: " << IMG_GetError() << std::endl;
+          success = false;
+        } else {
+          //Get window surface
+          globals::screenSurface = SDL_GetWindowSurface(globals::window);
+        }
       }
     }
   }
 
   return success;
 }
-
 
 bool loadMedia()
 {
   //Loading success flag
   bool success = true;
 
-  //Load PNG surface
-  globals::gStretchedSurface = loadSurface( "../assets/flalindisimaprechocha.png" );
-  if( globals::gStretchedSurface == NULL )
+  //Load texture
+  globals::gTexture = loadTexture( "../assets/viewport.png" );
+  if( globals::gTexture == NULL )
   {
-    std::cout << "Failed to load PNG image!" << std::endl;
+    printf( "Failed to load texture image!\n" );
     success = false;
   }
 
+  //Nothing to load
   return success;
 }
 
-SDL_Surface* loadSurface( std::string path )
-{
-  //The final optimized image
-  SDL_Surface* optimizedSurface = NULL;
+SDL_Texture *loadTexture(std::string path) {
+  //The final texture
+  SDL_Texture *newTexture = NULL;
 
   //Load image at specified path
-  SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
-  if( loadedSurface == NULL )
-  {
-    std::cout << "Unable to load image " << path.c_str() << "! SDL_image Error: " << IMG_GetError() << std::endl;
+  SDL_Surface *loadedSurface = IMG_Load(path.c_str());
+  if (loadedSurface == NULL) {
+    printf("Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError());
+  } else {
+    //Create texture from surface pixels
+    newTexture = SDL_CreateTextureFromSurface(globals::renderer, loadedSurface);
+    if (newTexture == NULL) {
+      printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
+    }
+
+    //Get rid of old loaded surface
+    SDL_FreeSurface(loadedSurface);
   }
-  else
-  {
+
+  return newTexture;
+}
+
+SDL_Surface *loadSurface(std::string path) {
+  //The final optimized image
+  SDL_Surface *optimizedSurface = NULL;
+
+  //Load image at specified path
+  SDL_Surface *loadedSurface = IMG_Load(path.c_str());
+  if (loadedSurface == NULL) {
+    std::cout << "Unable to load image " << path.c_str() << "! SDL_image Error: " << IMG_GetError() << std::endl;
+  } else {
     //Convert surface to screen format
-    optimizedSurface = SDL_ConvertSurface( loadedSurface, globals::screenSurface->format, 0 );
-    if( optimizedSurface == NULL )
-    {
+    optimizedSurface = SDL_ConvertSurface(loadedSurface, globals::screenSurface->format, 0);
+    if (optimizedSurface == NULL) {
       std::cout << "Unable to optimize image " << path.c_str() << "! SDL Error: " << SDL_GetError() << std::endl;
     }
 
     //Get rid of old loaded surface
-    SDL_FreeSurface( loadedSurface );
+    SDL_FreeSurface(loadedSurface);
   }
 
   return optimizedSurface;
 }
 
-void close()
-{
-  //Deallocate surface
-  SDL_FreeSurface( globals::gStretchedSurface );
-  globals::gStretchedSurface = NULL;
+void close() {
+  SDL_DestroyTexture(globals::gTexture);
+  globals::gTexture = NULL;
 
   //Destroy window
-  SDL_DestroyWindow( globals::window );
+  SDL_DestroyWindow(globals::window);
+  SDL_DestroyRenderer(globals::renderer);
+  globals::renderer = NULL;
   globals::window = NULL;
 
   //Quit SDL subsystems

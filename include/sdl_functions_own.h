@@ -21,8 +21,12 @@ extern SDL_Window *window;
 // Puntero al render
 extern SDL_Surface *screenSurface;
 
-// Imagen actual
-extern SDL_Surface* gStretchedSurface;
+// Puntero a la textura
+extern SDL_Texture* gTexture;
+
+// Puntero al render
+extern SDL_Renderer* renderer;
+
 }
 
 /******************************* Definiciones *******************************/
@@ -35,5 +39,7 @@ bool loadMedia();
 SDL_Surface* loadSurface(std::string path);
 
 void close();
+
+SDL_Texture* loadTexture( std::string path );
 
 #endif //MAIN_CPP__SDL_FUNCTIONS_OWN_H_
