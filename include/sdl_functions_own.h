@@ -7,22 +7,13 @@
 
 #include <iostream>
 #include <SDL.h>
+#include <SDL_image.h>
 
-enum KeyPressSurfaces {
-  KEY_PRESS_SURFACE_DEFAULT,
-  KEY_PRESS_SURFACE_UP,
-  KEY_PRESS_SURFACE_DOWN,
-  KEY_PRESS_SURFACE_LEFT,
-  KEY_PRESS_SURFACE_RIGHT,
-  KEY_PRESS_SURFACE_TOTAL
-};
-
-
-static const int SCREEN_HEIGHT = 720;
-static const int SCREEN_WIDTH = 1080;
 /************************ SDL GLOBAL VARIABLES ***************************/
 namespace globals {
 
+static const int SCREEN_HEIGHT = 720;
+static const int SCREEN_WIDTH = 1080;
 
 // Puntero a la ventana que se va a crear
 extern SDL_Window *window;

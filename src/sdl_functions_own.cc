@@ -5,100 +5,102 @@
 #include "../include/sdl_functions_own.h"
 
 
-
-
 /******************************* Funciones *******************************/
 
 bool init() {
-  // flag de inicialización
+  //Initialization flag
   bool success = true;
 
-  // Iniciamos SDL
-  if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-    std::cout << "SDL no se pudo inicializar ! SDL_Error: " << SDL_GetError() << std::endl;
+  //Initialize SDL
+  if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
+  {
+    printf( "SDL could not initialize! SDL Error: %s\n", SDL_GetError() );
     success = false;
-  } else {
-    // Crea la ventana en la que se va a renderizar el código
-    globals::window = SDL_CreateWindow("SDL - INITIALIZED",
-                                       SDL_WINDOWPOS_UNDEFINED,
-                                       SDL_WINDOWPOS_UNDEFINED,
-                                       globals::SCREEN_WIDTH,
-                                       globals::SCREEN_HEIGHT,
-                                       SDL_WINDOW_SHOWN);
-
-    if (globals::window == nullptr) {
-      std::cout << "La ventana no pudo ser creada ! SDL_Error: " << SDL_GetError() << std::endl;
+  }
+  else
+  {
+    //Create window
+    globals::window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, globals::SCREEN_WIDTH, globals::SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+    if( globals::window == NULL )
+    {
+      std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
       success = false;
-    } else {
-      // Obtenemos el surface de la ventana
-      globals::screenSurface = SDL_GetWindowSurface(globals::window);
+    }
+    else
+    {
+      //Initialize PNG loading
+      int imgFlags = IMG_INIT_PNG;
+      if( !( IMG_Init( imgFlags ) & imgFlags ) )
+      {
+        std::cout << "SDL_image could not initialize! SDL_image Error: " << IMG_GetError() << std::endl;
+        success = false;
+      }
+      else
+      {
+        //Get window surface
+        globals::screenSurface = SDL_GetWindowSurface( globals::window );
+      }
     }
   }
+
   return success;
 }
 
-bool loadMedia() {
+
+bool loadMedia()
+{
+  //Loading success flag
   bool success = true;
 
-    // Cargamos la imagen
-    globals::gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] = loadSurface("../assets/press.bmp");
-    if (globals::gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] == nullptr) {
-      std::cout << "No se pudo cargar la imagen por defecto" << std::endl;
-      success = false;
-    }
-
-    // Cargamos la imagen para la tecla arriba
-    globals::gKeyPressSurfaces[KEY_PRESS_SURFACE_UP] = loadSurface("../assets/up.bmp");
-    if (globals::gKeyPressSurfaces[KEY_PRESS_SURFACE_UP] == nullptr) {
-      std::cout << "No se pudo cargar la imagen para la tecla arriba" << std::endl;
-      success = false;
-    }
-
-    // Cargamos la imagen para la tecla abajo
-    globals::gKeyPressSurfaces[KEY_PRESS_SURFACE_DOWN] = loadSurface("../assets/down.bmp");
-    if (globals::gKeyPressSurfaces[KEY_PRESS_SURFACE_DOWN] == nullptr) {
-      std::cout << "No se pudo cargar la imagen para la tecla abajo" << std::endl;
-      success = false;
-    }
-
-    // Cargamos la imagen para la tecla izquierda
-    globals::gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("../assets/left.bmp");
-    if (globals::gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] == nullptr) {
-      std::cout << "No se pudo cargar la imagen para la tecla izquierda" << std::endl;
-      success = false;
-    }
-
-    // Cargamos la imagen para la tecla derecha
-    globals::gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] = loadSurface("../assets/right.bmp");
-    if (globals::gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] == nullptr) {
-      std::cout << "No se pudo cargar la imagen para la tecla derecha" << std::endl;
-      success = false;
-    }
-
-    return success;
-
-}
-
-SDL_Surface* loadSurface(std::string path) {
-  // Cargamos la imagen
-  SDL_Surface *loadedSurface = SDL_LoadBMP(path.c_str());
-
-  if (loadedSurface == nullptr) {
-    std::cout << "No se pudo cargar la imagen ! SDL_Error: " << SDL_GetError() << std::endl;
+  //Load PNG surface
+  globals::gStretchedSurface = loadSurface( "../assets/flalindisimaprechocha.png" );
+  if( globals::gStretchedSurface == NULL )
+  {
+    std::cout << "Failed to load PNG image!" << std::endl;
+    success = false;
   }
 
-  return loadedSurface;
+  return success;
 }
 
-void close() {
-  // Liberamos la imagen
-  SDL_FreeSurface(globals::helloWorld);
-  globals::helloWorld = nullptr;
+SDL_Surface* loadSurface( std::string path )
+{
+  //The final optimized image
+  SDL_Surface* optimizedSurface = NULL;
 
-  // Destruimos la ventana
-  SDL_DestroyWindow(globals::window);
-  globals::window = nullptr;
+  //Load image at specified path
+  SDL_Surface* loadedSurface = IMG_Load( path.c_str() );
+  if( loadedSurface == NULL )
+  {
+    std::cout << "Unable to load image " << path.c_str() << "! SDL_image Error: " << IMG_GetError() << std::endl;
+  }
+  else
+  {
+    //Convert surface to screen format
+    optimizedSurface = SDL_ConvertSurface( loadedSurface, globals::screenSurface->format, 0 );
+    if( optimizedSurface == NULL )
+    {
+      std::cout << "Unable to optimize image " << path.c_str() << "! SDL Error: " << SDL_GetError() << std::endl;
+    }
 
-  // Quitamos SDL
+    //Get rid of old loaded surface
+    SDL_FreeSurface( loadedSurface );
+  }
+
+  return optimizedSurface;
+}
+
+void close()
+{
+  //Deallocate surface
+  SDL_FreeSurface( globals::gStretchedSurface );
+  globals::gStretchedSurface = NULL;
+
+  //Destroy window
+  SDL_DestroyWindow( globals::window );
+  globals::window = NULL;
+
+  //Quit SDL subsystems
+  IMG_Quit();
   SDL_Quit();
 }
