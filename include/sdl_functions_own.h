@@ -18,11 +18,11 @@ enum KeyPressSurfaces {
 };
 
 
-
+static const int SCREEN_HEIGHT = 720;
+static const int SCREEN_WIDTH = 1080;
 /************************ SDL GLOBAL VARIABLES ***************************/
 namespace globals {
-static const int SCREEN_HEIGHT = 480;
-static const int SCREEN_WIDTH = 640;
+
 
 // Puntero a la ventana que se va a crear
 extern SDL_Window *window;
@@ -30,14 +30,8 @@ extern SDL_Window *window;
 // Puntero al render
 extern SDL_Surface *screenSurface;
 
-// Puntero a la imagen que se va a cargar
-extern SDL_Surface *helloWorld;
-
-// Vector de imagenes para las teclas
-extern SDL_Surface *gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
-
 // Imagen actual
-extern SDL_Surface *gCurrentSurface;
+extern SDL_Surface* gStretchedSurface;
 }
 
 /******************************* Definiciones *******************************/
