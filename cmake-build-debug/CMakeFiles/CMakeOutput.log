@@ -1,16 +1,16 @@
 The system is: Windows - 10.0.19044 - AMD64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30037/bin/Hostx86/x86/cl.exe 
+Compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31933/bin/Hostx86/x86/cl.exe 
 Build flags: 
 Id flags:  
 
 The output was:
 0
-Compilador de optimización de C/C++ de Microsoft (R) versión 19.29.30040 para x86
+Compilador de optimización de C/C++ de Microsoft (R) versión 19.34.31933 para x86
 (C) Microsoft Corporation. Todos los derechos reservados.
 
 CMakeCCompilerId.c
-Microsoft (R) Incremental Linker Version 14.29.30040.0
+Microsoft (R) Incremental Linker Version 14.34.31933.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
 /out:CMakeCCompilerId.exe 
@@ -21,20 +21,20 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
 
-The C compiler identification is MSVC, found in "D:/Clase/3/IA/P2-Graphics/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdC/CMakeCCompilerId.exe"
+The C compiler identification is MSVC, found in "C:/uni/IAp2/ia_graphic/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdC/CMakeCCompilerId.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30037/bin/Hostx86/x86/cl.exe 
+Compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31933/bin/Hostx86/x86/cl.exe 
 Build flags: 
 Id flags:  
 
 The output was:
 0
-Compilador de optimización de C/C++ de Microsoft (R) versión 19.29.30040 para x86
+Compilador de optimización de C/C++ de Microsoft (R) versión 19.34.31933 para x86
 (C) Microsoft Corporation. Todos los derechos reservados.
 
 CMakeCXXCompilerId.cpp
-Microsoft (R) Incremental Linker Version 14.29.30040.0
+Microsoft (R) Incremental Linker Version 14.34.31933.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
 /out:CMakeCXXCompilerId.exe 
@@ -45,23 +45,23 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
 
-The CXX compiler identification is MSVC, found in "D:/Clase/3/IA/P2-Graphics/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdCXX/CMakeCXXCompilerId.exe"
+The CXX compiler identification is MSVC, found in "C:/uni/IAp2/ia_graphic/cmake-build-debug/CMakeFiles/3.23.2/CompilerIdCXX/CMakeCXXCompilerId.exe"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: D:/Clase/3/IA/P2-Graphics/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/uni/IAp2/ia_graphic/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/ninja.exe cmTC_7232d && [1/2] Building C object CMakeFiles\cmTC_7232d.dir\CMakeCCompilerABI.c.obj
-Nota: inclusión del archivo: C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeCompilerABI.h
-[2/2] Linking C executable cmTC_7232d.exe
+Run Build Command(s):C:/Program Files/JetBrains/CLion 2021.3.3/bin/ninja/win/ninja.exe cmTC_f885e && [1/2] Building C object CMakeFiles\cmTC_f885e.dir\CMakeCCompilerABI.c.obj
+Nota: inclusión del archivo: C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeCompilerABI.h
+[2/2] Linking C executable cmTC_f885e.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: D:/Clase/3/IA/P2-Graphics/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/uni/IAp2/ia_graphic/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files/JetBrains/CLion 2022.1/bin/ninja/win/ninja.exe cmTC_b1532 && [1/2] Building CXX object CMakeFiles\cmTC_b1532.dir\CMakeCXXCompilerABI.cpp.obj
-Nota: inclusión del archivo: C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeCompilerABI.h
-[2/2] Linking CXX executable cmTC_b1532.exe
+Run Build Command(s):C:/Program Files/JetBrains/CLion 2021.3.3/bin/ninja/win/ninja.exe cmTC_98b73 && [1/2] Building CXX object CMakeFiles\cmTC_98b73.dir\CMakeCXXCompilerABI.cpp.obj
+Nota: inclusión del archivo: C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeCompilerABI.h
+[2/2] Linking CXX executable cmTC_98b73.exe
 
 
 

@@ -1,3 +1,3 @@
-D:/Clase/3/IA/P2-Graphics/cmake-build-debug/CMakeFiles/P2___Graphics.dir
-D:/Clase/3/IA/P2-Graphics/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Clase/3/IA/P2-Graphics/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/uni/IAp2/ia_graphic/cmake-build-debug/CMakeFiles/P2___Graphics.dir
+C:/uni/IAp2/ia_graphic/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/uni/IAp2/ia_graphic/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -3,19 +3,18 @@ project(P2___Graphics)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SDL2_LIB_DIR D:/Clase/3/IA/P2-Graphics/SDL/SDL2-2.24.2/lib/x86)
-set(SDL2_INCLUDE_DIR D:/Clase/3/IA/P2-Graphics/SDL/SDL2-2.24.2/include)
 
-include_directories(${SDL2_INCLUDE_DIR})
-link_directories(${SDL2_LIB_DIR})
 
-#set(SDL2_IMAGE_LIB_DIR D:/Clase/3/IA/P2-Graphics/SDL/SDL2_image-2.6.2/lib/x86)
-#set(SDL2_IMAGE_INCLUDE_DIR D:/Clase/3/IA/P2-Graphics/SDL/SDL2_image-2.6.2/include)
+set(SDL2_DIR ${PROJECT_SOURCE_DIR}/SDL/SDL2-2.24.2/cmake)
+find_package(SDL2 REQUIRED)
 
-#include_directories(${SDL2_IMAGE_INCLUDE_DIR})
-#link_directories(${SDL2_IMAGE_LIB_DIR})
 
-add_executable(P2___Graphics main.cpp src/celda.cc src/empty.cc src/end.cc src/estado.cc src/obstacle.cc src/path.cc src/player.cc src/world.cc)
+add_executable(P2___Graphics main.cpp src/celda.cc src/empty.cc src/end.cc src/estado.cc src/obstacle.cc src/path.cc src/player.cc src/world.cc src/Visitado_State.cc)
 
-target_link_libraries(${PROJECT_NAME} SDL2main SDL2)
-#target_link_libraries(${PROJECT_NAME} SDL2_image)
+target_link_libraries(P2___Graphics SDL2::SDL2 SDL2::SDL2main)
+
+
+target_include_directories(P2___Graphics PUBLIC ${PROJECT_SOURCE_DIR}/SDL/SDL2-2.24.2/include)
+target_link_directories(P2___Graphics PUBLIC $${PROJECT_SOURCE_DIR}/SDL/SDL2-2.24.2/lib/x86)
+
+target_link_libraries(P2___Graphics SDL2::SDL2main SDL2::SDL2)

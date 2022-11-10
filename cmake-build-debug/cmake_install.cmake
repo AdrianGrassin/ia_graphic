@@ -1,4 +1,4 @@
-# Install script for directory: D:/Clase/3/IA/P2-Graphics
+# Install script for directory: C:/uni/IAp2/ia_graphic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Clase/3/IA/P2-Graphics/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/uni/IAp2/ia_graphic/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

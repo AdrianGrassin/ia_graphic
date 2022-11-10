@@ -39,7 +39,7 @@ include CMakeFiles\rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = D$:\Clase\3\IA\P2-Graphics\cmake-build-debug\
+cmake_ninja_workdir = C$:\uni\IAp2\ia_graphic\cmake-build-debug\
 # =============================================================================
 # Object build statements for EXECUTABLE target P2___Graphics
 
@@ -49,17 +49,81 @@ cmake_ninja_workdir = D$:\Clase\3\IA\P2-Graphics\cmake-build-debug\
 
 build cmake_object_order_depends_target_P2___Graphics: phony || CMakeFiles\P2___Graphics.dir
 
-build CMakeFiles\P2___Graphics.dir\main.cpp.obj: CXX_COMPILER__P2___Graphics_Debug D$:\Clase\3\IA\P2-Graphics\main.cpp || cmake_object_order_depends_target_P2___Graphics
+build CMakeFiles\P2___Graphics.dir\main.cpp.obj: CXX_COMPILER__P2___Graphics_Debug C$:\uni\IAp2\ia_graphic\main.cpp || cmake_object_order_depends_target_P2___Graphics
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -ID:\Clase\3\IA\P2-Graphics\SDL\SDL2-2.24.2\include -ID:\Clase\3\IA\P2-Graphics\SDL\SDL2_image-2.6.2\include
+  INCLUDES = -IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\include -external:IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\cmake\..\include -external:W0
   OBJECT_DIR = CMakeFiles\P2___Graphics.dir
   OBJECT_FILE_DIR = CMakeFiles\P2___Graphics.dir
   TARGET_COMPILE_PDB = CMakeFiles\P2___Graphics.dir\
   TARGET_PDB = P2___Graphics.pdb
 
-build CMakeFiles\P2___Graphics.dir\src\sdl_functions_own.cc.obj: CXX_COMPILER__P2___Graphics_Debug D$:\Clase\3\IA\P2-Graphics\src\sdl_functions_own.cc || cmake_object_order_depends_target_P2___Graphics
+build CMakeFiles\P2___Graphics.dir\src\celda.cc.obj: CXX_COMPILER__P2___Graphics_Debug C$:\uni\IAp2\ia_graphic\src\celda.cc || cmake_object_order_depends_target_P2___Graphics
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
-  INCLUDES = -ID:\Clase\3\IA\P2-Graphics\SDL\SDL2-2.24.2\include -ID:\Clase\3\IA\P2-Graphics\SDL\SDL2_image-2.6.2\include
+  INCLUDES = -IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\include -external:IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\cmake\..\include -external:W0
+  OBJECT_DIR = CMakeFiles\P2___Graphics.dir
+  OBJECT_FILE_DIR = CMakeFiles\P2___Graphics.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\P2___Graphics.dir\
+  TARGET_PDB = P2___Graphics.pdb
+
+build CMakeFiles\P2___Graphics.dir\src\empty.cc.obj: CXX_COMPILER__P2___Graphics_Debug C$:\uni\IAp2\ia_graphic\src\empty.cc || cmake_object_order_depends_target_P2___Graphics
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  INCLUDES = -IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\include -external:IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\cmake\..\include -external:W0
+  OBJECT_DIR = CMakeFiles\P2___Graphics.dir
+  OBJECT_FILE_DIR = CMakeFiles\P2___Graphics.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\P2___Graphics.dir\
+  TARGET_PDB = P2___Graphics.pdb
+
+build CMakeFiles\P2___Graphics.dir\src\end.cc.obj: CXX_COMPILER__P2___Graphics_Debug C$:\uni\IAp2\ia_graphic\src\end.cc || cmake_object_order_depends_target_P2___Graphics
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  INCLUDES = -IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\include -external:IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\cmake\..\include -external:W0
+  OBJECT_DIR = CMakeFiles\P2___Graphics.dir
+  OBJECT_FILE_DIR = CMakeFiles\P2___Graphics.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\P2___Graphics.dir\
+  TARGET_PDB = P2___Graphics.pdb
+
+build CMakeFiles\P2___Graphics.dir\src\estado.cc.obj: CXX_COMPILER__P2___Graphics_Debug C$:\uni\IAp2\ia_graphic\src\estado.cc || cmake_object_order_depends_target_P2___Graphics
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  INCLUDES = -IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\include -external:IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\cmake\..\include -external:W0
+  OBJECT_DIR = CMakeFiles\P2___Graphics.dir
+  OBJECT_FILE_DIR = CMakeFiles\P2___Graphics.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\P2___Graphics.dir\
+  TARGET_PDB = P2___Graphics.pdb
+
+build CMakeFiles\P2___Graphics.dir\src\obstacle.cc.obj: CXX_COMPILER__P2___Graphics_Debug C$:\uni\IAp2\ia_graphic\src\obstacle.cc || cmake_object_order_depends_target_P2___Graphics
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  INCLUDES = -IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\include -external:IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\cmake\..\include -external:W0
+  OBJECT_DIR = CMakeFiles\P2___Graphics.dir
+  OBJECT_FILE_DIR = CMakeFiles\P2___Graphics.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\P2___Graphics.dir\
+  TARGET_PDB = P2___Graphics.pdb
+
+build CMakeFiles\P2___Graphics.dir\src\path.cc.obj: CXX_COMPILER__P2___Graphics_Debug C$:\uni\IAp2\ia_graphic\src\path.cc || cmake_object_order_depends_target_P2___Graphics
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  INCLUDES = -IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\include -external:IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\cmake\..\include -external:W0
+  OBJECT_DIR = CMakeFiles\P2___Graphics.dir
+  OBJECT_FILE_DIR = CMakeFiles\P2___Graphics.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\P2___Graphics.dir\
+  TARGET_PDB = P2___Graphics.pdb
+
+build CMakeFiles\P2___Graphics.dir\src\player.cc.obj: CXX_COMPILER__P2___Graphics_Debug C$:\uni\IAp2\ia_graphic\src\player.cc || cmake_object_order_depends_target_P2___Graphics
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  INCLUDES = -IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\include -external:IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\cmake\..\include -external:W0
+  OBJECT_DIR = CMakeFiles\P2___Graphics.dir
+  OBJECT_FILE_DIR = CMakeFiles\P2___Graphics.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\P2___Graphics.dir\
+  TARGET_PDB = P2___Graphics.pdb
+
+build CMakeFiles\P2___Graphics.dir\src\world.cc.obj: CXX_COMPILER__P2___Graphics_Debug C$:\uni\IAp2\ia_graphic\src\world.cc || cmake_object_order_depends_target_P2___Graphics
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  INCLUDES = -IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\include -external:IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\cmake\..\include -external:W0
+  OBJECT_DIR = CMakeFiles\P2___Graphics.dir
+  OBJECT_FILE_DIR = CMakeFiles\P2___Graphics.dir\src
+  TARGET_COMPILE_PDB = CMakeFiles\P2___Graphics.dir\
+  TARGET_PDB = P2___Graphics.pdb
+
+build CMakeFiles\P2___Graphics.dir\src\Visitado_State.cc.obj: CXX_COMPILER__P2___Graphics_Debug C$:\uni\IAp2\ia_graphic\src\Visitado_State.cc || cmake_object_order_depends_target_P2___Graphics
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
+  INCLUDES = -IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\include -external:IC:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\cmake\..\include -external:W0
   OBJECT_DIR = CMakeFiles\P2___Graphics.dir
   OBJECT_FILE_DIR = CMakeFiles\P2___Graphics.dir\src
   TARGET_COMPILE_PDB = CMakeFiles\P2___Graphics.dir\
@@ -73,11 +137,11 @@ build CMakeFiles\P2___Graphics.dir\src\sdl_functions_own.cc.obj: CXX_COMPILER__P
 #############################################
 # Link the executable P2___Graphics.exe
 
-build P2___Graphics.exe: CXX_EXECUTABLE_LINKER__P2___Graphics_Debug CMakeFiles\P2___Graphics.dir\main.cpp.obj CMakeFiles\P2___Graphics.dir\src\sdl_functions_own.cc.obj
+build P2___Graphics.exe: CXX_EXECUTABLE_LINKER__P2___Graphics_Debug CMakeFiles\P2___Graphics.dir\main.cpp.obj CMakeFiles\P2___Graphics.dir\src\celda.cc.obj CMakeFiles\P2___Graphics.dir\src\empty.cc.obj CMakeFiles\P2___Graphics.dir\src\end.cc.obj CMakeFiles\P2___Graphics.dir\src\estado.cc.obj CMakeFiles\P2___Graphics.dir\src\obstacle.cc.obj CMakeFiles\P2___Graphics.dir\src\path.cc.obj CMakeFiles\P2___Graphics.dir\src\player.cc.obj CMakeFiles\P2___Graphics.dir\src\world.cc.obj CMakeFiles\P2___Graphics.dir\src\Visitado_State.cc.obj | ..\SDL\SDL2-2.24.2\cmake\..\lib\x86\SDL2main.lib ..\SDL\SDL2-2.24.2\cmake\..\lib\x86\SDL2main.lib ..\SDL\SDL2-2.24.2\cmake\..\lib\x86\SDL2.lib
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = SDL2main.lib  SDL2.lib  SDL2_image.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  LINK_PATH = -LIBPATH:D:\Clase\3\IA\P2-Graphics\SDL\SDL2-2.24.2\lib\x86   -LIBPATH:D:\Clase\3\IA\P2-Graphics\SDL\SDL2_image-2.6.2\lib\x86
+  LINK_LIBRARIES = ..\SDL\SDL2-2.24.2\cmake\..\lib\x86\SDL2main.lib  ..\SDL\SDL2-2.24.2\cmake\..\lib\x86\SDL2main.lib  ..\SDL\SDL2-2.24.2\cmake\..\lib\x86\SDL2.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_PATH = -LIBPATH:C:\uni\IAp2\ia_graphic\$$C:\uni\IAp2\ia_graphic\SDL\SDL2-2.24.2\lib\x86
   OBJECT_DIR = CMakeFiles\P2___Graphics.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -91,7 +155,7 @@ build P2___Graphics.exe: CXX_EXECUTABLE_LINKER__P2___Graphics_Debug CMakeFiles\P
 # Utility command for edit_cache
 
 build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\Clase\3\IA\P2-Graphics\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\uni\IAp2\ia_graphic\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -102,7 +166,7 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\Clase\3\IA\P2-Graphics\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SD:\Clase\3\IA\P2-Graphics -BD:\Clase\3\IA\P2-Graphics\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D C:\uni\IAp2\ia_graphic\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\uni\IAp2\ia_graphic -BC:\uni\IAp2\ia_graphic\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -120,7 +184,7 @@ build P2___Graphics: phony P2___Graphics.exe
 # =============================================================================
 
 #############################################
-# Folder: D:/Clase/3/IA/P2-Graphics/cmake-build-debug
+# Folder: C:/uni/IAp2/ia_graphic/cmake-build-debug
 
 build all: phony P2___Graphics.exe
 
@@ -131,14 +195,14 @@ build all: phony P2___Graphics.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ..\CMakeLists.txt C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.23.2\CMakeCCompiler.cmake CMakeFiles\3.23.2\CMakeCXXCompiler.cmake CMakeFiles\3.23.2\CMakeRCCompiler.cmake CMakeFiles\3.23.2\CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ..\CMakeLists.txt ..\SDL\SDL2-2.24.2\cmake\sdl2-config-version.cmake ..\SDL\SDL2-2.24.2\cmake\sdl2-config.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\FeatureSummary.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.23.2\CMakeCCompiler.cmake CMakeFiles\3.23.2\CMakeCXXCompiler.cmake CMakeFiles\3.23.2\CMakeRCCompiler.cmake CMakeFiles\3.23.2\CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ..\CMakeLists.txt C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2022.1\bin\cmake\win\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.23.2\CMakeCCompiler.cmake CMakeFiles\3.23.2\CMakeCXXCompiler.cmake CMakeFiles\3.23.2\CMakeRCCompiler.cmake CMakeFiles\3.23.2\CMakeSystem.cmake: phony
+build ..\CMakeLists.txt ..\SDL\SDL2-2.24.2\cmake\sdl2-config-version.cmake ..\SDL\SDL2-2.24.2\cmake\sdl2-config.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeRCInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\FeatureSummary.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Platform\Windows.cmake C$:\Program$ Files\JetBrains\CLion$ 2021.3.3\bin\cmake\win\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.23.2\CMakeCCompiler.cmake CMakeFiles\3.23.2\CMakeCXXCompiler.cmake CMakeFiles\3.23.2\CMakeRCCompiler.cmake CMakeFiles\3.23.2\CMakeSystem.cmake: phony
 
 
 #############################################
