@@ -42,9 +42,9 @@ std::ostream &operator<<(std::ostream &os, const world &world) {
 
 void world::set_player() {
   Estado *stateAux = new Player_state();
-    int i = std::rand() % (matriz_.size() - 2) + 1;
-    int j = std::rand() % (matriz_[0].size() - 2) + 1;
-    player_pos_ = std::make_pair(i, j);
+  int i = std::rand() % (matriz_.size() - 2) + 1;
+  int j = std::rand() % (matriz_[0].size() - 2) + 1;
+  player_pos_ = std::make_pair(i, j);
 }
 
 void world::getnexstate() {
@@ -55,40 +55,35 @@ void world::getnexstate() {
   // mover hacia la celda vecina que tenga el simbolo .
   // siempre hay una celda con el simbolo .
 
-    if (matriz_[x][y - 1].get_state() == '.') {
-        matriz_[x][y].set_state(new Path_state());
-        matriz_[x][y - 1].set_state(new Player_state());
-        player_pos_ = std::make_pair(x, y - 1);
-    } else if (matriz_[x][y + 1].get_state() == '.') {
-        matriz_[x][y].set_state(new Path_state());
-        matriz_[x][y + 1].set_state(new Player_state());
-        player_pos_ = std::make_pair(x, y + 1);
-    } else if (matriz_[x - 1][y].get_state() == '.') {
-        matriz_[x][y].set_state(new Path_state());
-        matriz_[x - 1][y].set_state(new Player_state());
-        player_pos_ = std::make_pair(x - 1, y);
-    } else if (matriz_[x + 1][y].get_state() == '.') {
-        matriz_[x][y].set_state(new Path_state());
-        matriz_[x + 1][y].set_state(new Player_state());
-        player_pos_ = std::make_pair(x + 1, y);
-    }
-
-
-
+  if (matriz_[x][y - 1].get_state() == '.') {
+    matriz_[x][y].set_state(new Path_state());
+    matriz_[x][y - 1].set_state(new Player_state());
+    player_pos_ = std::make_pair(x, y - 1);
+  } else if (matriz_[x][y + 1].get_state() == '.') {
+    matriz_[x][y].set_state(new Path_state());
+    matriz_[x][y + 1].set_state(new Player_state());
+    player_pos_ = std::make_pair(x, y + 1);
+  } else if (matriz_[x - 1][y].get_state() == '.') {
+    matriz_[x][y].set_state(new Path_state());
+    matriz_[x - 1][y].set_state(new Player_state());
+    player_pos_ = std::make_pair(x - 1, y);
+  } else if (matriz_[x + 1][y].get_state() == '.') {
+    matriz_[x][y].set_state(new Path_state());
+    matriz_[x + 1][y].set_state(new Player_state());
+    player_pos_ = std::make_pair(x + 1, y);
+  }
 
 }
-
-
 
 void world::set_end() {
   srand(time(nullptr));
 
-  int x = rand() % matriz_.size() - 2;
-  int y = rand() % matriz_[0].size() - 2;
-  matriz_[x + 1][y + 1].set_state(new End_state());
+  int x = std::rand() % ((matriz_.size() - 2) + 1);
+  int y = std::rand() % ((matriz_[0].size() - 2) + 1);
+  matriz_[x][y].set_state(new End_state());
 
-  end_pos_.first = x + 1;
-  end_pos_.second = y + 1;
+  end_pos_.first = x;
+  end_pos_.second = y;
 
 }
 std::pair<int, int> world::get_player_pos() const {
@@ -100,7 +95,7 @@ std::pair<int, int> world::get_end_pos() const {
 std::vector<std::vector<Celda>> &world::get_matriz() {
   return matriz_;
 }
-void world::setAstarpath() {
+void world::setAstarpath_mannhattan() {
 
 
   // matriz de heuristica de manhattan
@@ -139,6 +134,45 @@ void world::setAstarpath() {
     actual = next;
   }
 
+}
+
+void world::setAstarpath_euclidean() {
+
+  // matriz de heuristica de euclidean
+
+  std::vector<std::vector<float>> matriz_costos;
+  matriz_costos.resize(matriz_.size());
+
+  for (int i = 0; i < matriz_.size(); ++i) {
+    matriz_costos[i].resize(matriz_[0].size());
+  }
+
+  for (int i = 0; i < matriz_.size(); ++i) {
+    for (int j = 0; j < matriz_[0].size(); ++j) {
+      matriz_costos[i][j] = sqrt(pow(i - end_pos_.first, 2) + pow(j - end_pos_.second, 2));
+    }
+  }
+
+  // calculo del camino minimo
+
+  std::pair<int, int> actual = player_pos_;
+  std::pair<int, int> next = player_pos_;
+
+  while (actual != end_pos_) {
+    for (int i = actual.first - 1; i <= actual.first + 1; i++) {
+      for (int j = actual.second - 1; j <= actual.second + 1; j++) {
+        if (i == actual.first || j == actual.second && matriz_[i][j].get_state() != '#') {
+          if (matriz_costos[i][j] < matriz_costos[next.first][next.second]) {
+            next.first = i;
+            next.second = j;
+          }
+        }
+      }
+    }
+    std::cout << "Visited: " << next.first << " " << next.second << std::endl;
+    matriz_[next.first][next.second].set_state(new Visitado_State());
+    actual = next;
+  }
 }
 
 

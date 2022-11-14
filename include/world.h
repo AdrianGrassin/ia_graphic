@@ -28,7 +28,8 @@ class world {
   void set_player();
   void set_end();
   void getnexstate();
-  void setAstarpath();
+  void setAstarpath_mannhattan();
+  void setAstarpath_euclidean();
   std::vector<std::vector<Celda>> &get_matriz();
 
   std::pair<int, int> get_player_pos() const;
